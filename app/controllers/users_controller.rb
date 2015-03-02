@@ -23,6 +23,8 @@ class UsersController < ApplicationController
   			session[:user_id] = @user.id
   				redirect_to @user, notice: "New user created."	
   	end
+    #Needed to update users address based on there current ip when creating there account
+    User.last.update(address: remote_ip)
   end
 
   def update
