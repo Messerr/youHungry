@@ -10,6 +10,7 @@
 	<header>
 		<% if current_user != nil %>
 	<h3>Welcome <%=current_user.fname%>! </h3>
+	<%= link_to 'Sign Out', logout_path %>
 	<%end%>
 	</header>
 		<div class="signoutlink">
