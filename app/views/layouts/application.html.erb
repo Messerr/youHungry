@@ -8,23 +8,44 @@
 </head>
 <body>
 	<header>
-		<% if current_user != nil %>
-	<h3>Welcome <%=current_user.fname%>! </h3>
-	<%= link_to 'sign out', logout_path %></p></li>
-	<%else%>
-		<h1><%= "You Hungry?" %></h1>
-	<%end%>
+      <% if current_user != nil %>
+	    <h3>Welcome <%=current_user.fname%>! </h3>
+	    <%= link_to 'sign out', logout_path %></p></li>
+	  <%else%>
+		<!--<h1><%= "You Hungry?" %></h1>-->
+      <%end%>
 	</header>
 
 	
-		<div class="signoutlink">
-			<br>
+		<!--<div class="signoutlink">-->
+			<!--<br>-->
+			<!--<a class="notice"><%= flash[:notice] if flash[:notice] %></a>-->
+				<!--<a class="alert"><%= flash[:alert] if flash[:alert] %></a>-->
+				<!--<br>-->
 
-			<a class="notice"><%= flash[:notice] if flash[:notice] %></a>
-				<a class="alert"><%= flash[:alert] if flash[:alert] %></a>
-				<br>
+		<!--</div>-->
 
-		</div>
+    <nav class="nav-bar">
+      <% if current_user != nil %>
+          <h3>Welcome <%=current_user.fname%>! </h3>
+          <%= link_to 'sign out', logout_path %></p></li>
+      <%else%>
+          <h1><%= "YouHungry?" %></h1>
+      <%end%>
+
+      <a class="notice"><%= flash[:notice] if flash[:notice] %></a>
+      <a class="alert"><%= flash[:alert] if flash[:alert] %></a>
+
+      <ul>
+        <li><a href="#firstPage" id="nav-home">Home</a></li>|
+        <li><a href="#secondPage" id="nav-about">About</a></li>|
+        <li><a href="#thirdPage" id="nav-signin">Sign In</a></li>|
+        <li><a href="#thirdPage" id="nav-signup">Sign Up</a></li>
+      </ul>
+
+
+
+    </nav>
 <%= yield %>
 
 </body>

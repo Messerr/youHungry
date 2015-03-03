@@ -1,3 +1,6 @@
+$default-bgcolor: rgba(71,95,93, 1);
+
+
 //NAV BAR//
 
 .nav-bar{
@@ -7,8 +10,9 @@
   top: 0;
   z-index: 10;
 //  margin-left: -2px;
-  background-color: rgba(71,95,93, 0.9);
+  background-color: $default-bgcolor;
   color: white;
+
 
   ul{
     float: right;
@@ -22,11 +26,18 @@
 
   a:link, a:visited{
     color: white;
-    text-shadow: 2px 2px 5px black;
+
     text-decoration: none;
 
   }
 
+  h1 {
+    display: inline-block;
+    float: left;
+    padding: 0px 5px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 5px black;
+  }
 }
 
 //BODY STYLES//
@@ -34,6 +45,12 @@
 body{
   color: #2B5F5C;
   text-align: center;
+  padding-top: 50px;
+}
+
+.fullpage{
+  margin: -50px;
+
 }
 
 //SECTION ONE STYLES//
@@ -95,12 +112,39 @@ body{
 //SECTION TWO STYLES//
 
 #sec2{
-  background-color: #475F5D;
+  background-color: $default-bgcolor;
 }
 
 
 //SECTION THREE STYLES//
 
 #sec3{
-  background-color: #475F5D;
+  background-color: $default-bgcolor;
+
+  .s3content{
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+  }
+
+  .signinbox, .signupbox {
+    border: 1px solid black;
+//    float: left;
+    width: 75%;
+    height: 50%;
+    margin: 5px 0px;
+  }
+
+  .signinbox {
+
+    #signinform {
+//      border: 1px solid black;
+      background-color: rgba(171, 228, 224, 0.6);;
+      height: 50%;
+      width: 20%;
+      float: right;
+      padding: 40px 0px  40px 0px;
+    }
+
+  }
 }
