@@ -1,1 +1,11 @@
 <h1><%= @user.fname %></h1>
+<h3><%= @user.gender %></h3>
+<h3><%= @user.bio %></h3><br />
+<%= image_tag @user.avatar.url(:medium) %><br />
+
+<%= link_to 'Edit profile', edit_user_path(current_user.id) %>
+
+<% randomID = Random.new.rand(1..User.all.count) %>
+<% randUser = User.find(randomID) %>
+Users that might interest you: <%= link_to randUser.fname, user_path(randUser.id) %>
+
