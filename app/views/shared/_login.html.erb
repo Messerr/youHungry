@@ -1,6 +1,6 @@
 <% if current_user %>
 	<p>Hello <%= current_user.fname %> | 
-		<%= link_to 'sign out', logout_path, method: :delete %>
+		<%= link_to 'sign out', logout_path %>
 			| 
 	</p>
 <% else %>

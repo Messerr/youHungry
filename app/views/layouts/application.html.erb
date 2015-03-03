@@ -10,16 +10,10 @@
 	<header>
 		<% if current_user != nil %>
 	<h3>Welcome <%=current_user.fname%>! </h3>
-	<%= link_to 'sign out', logout_path %></p></li>
-	<%else%>
-		<h1><%= "You Hungry?" %></h1>
 	<%end%>
 	</header>
-
-	
 		<div class="signoutlink">
 			<br>
-
 			<a class="notice"><%= flash[:notice] if flash[:notice] %></a>
 				<a class="alert"><%= flash[:alert] if flash[:alert] %></a>
 				<br>

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
   	session[:user_id] ? User.find(session[:user_id]) :nil
+  end
 
   require 'yelp'
 
@@ -22,7 +23,5 @@ class ApplicationController < ActionController::Base
     else
       request.remote_ip
     end
-
   end
-
 end
