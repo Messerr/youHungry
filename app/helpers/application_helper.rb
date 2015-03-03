@@ -6,4 +6,9 @@ module ApplicationHelper
   def set_user
     @user = User.find(params[:id])
   end
+
+  def user_params
+  	params.require(:user).permit(:fname, :lname, :bio, :email, :password, :gender, :preference, :avatar)
+  end
+
 end
