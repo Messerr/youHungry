@@ -38,6 +38,13 @@ $default-bgcolor: rgba(71,95,93, 1);
     margin-top: 10px;
     text-shadow: 2px 2px 5px black;
   }
+
+  .WelcomeMessage {
+    display: inline-block;
+    float: left;
+  }
+
+
 }
 
 //BODY STYLES//
@@ -60,91 +67,161 @@ body{
   background-size: cover;
 //  background-color: #213B2A;
 
-
-  .bubble
-  {
-    position: relative;
-    width: 220px;
-    height: 105px;
-    padding: 5px;
-    background: #FFFFFF;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    border: #418F7F solid 5px;
-    margin-left: 45em;
-    margin-bottom: 30em;
-
+  .welcomeHeader{
+    width: 30%;
+    margin-top: -300px;
+    float: right;
+    background-color: rgba(255,255,255, .7);
+//    font-weight: 700;
   }
 
-  .bubble:after
-  {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 10px 22px 10px 0;
-    border-color: transparent #FFFFFF;
-    display: block;
-    width: 0;
-    z-index: 1;
-    margin-top: -10px;
-    left: -22px;
-    top: 83%;
-  }
 
-  .bubble:before
-  {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 14px 26px 14px 0;
-    border-color: transparent #418F7F;
-    display: block;
-    width: 0;
-    z-index: 0;
-    margin-top: -14px;
-    left: -31px;
-    top: 83%;
-  }
 }
 
 
 //SECTION TWO STYLES//
 
 #sec2{
-  background-color: $default-bgcolor;
+//  background-color: $default-bgcolor;
+  background-image: image_url('about.jpg');
+  background-size: cover;
+
+  .s2Content {
+//    color: white;
+//    border: 1px solid black;
+    width: 95%;
+    margin: 0 auto;
+    height: 70%;
+    padding: 5px;
+
+    background-size: cover;
+
+
+    .about1 {
+      float: right;
+      width: 40%;
+//      border: 1px solid black;
+      border-radius: 5px;
+      margin-right:10px;
+      margin-top: 15%;
+      background:rgba(255,255,255, .6) ;
+
+      p{
+        text-align: center;
+        padding: 5px;
+
+
+
+
+      }
+    }
+
+
+
+    .sitePerks{
+      background-color: rgba(255,255,255, .7);
+      height: 32%;
+      width: 95%;
+      clear: both;
+      position: absolute;
+      bottom: 0;
+      padding-top: 10px;
+
+      ul {
+
+      }
+
+      li {
+        color: #2B5F5C;
+        display: inline-block;
+//        border: 1px solid black;
+        width: 29%;
+         p{
+          text-align: center;
+          color: #2B5F5C;
+        }
+
+      }
+    }
+  }
 }
 
 
 //SECTION THREE STYLES//
 
 #sec3{
+  @import 'formstyle';
   background-color: $default-bgcolor;
 
   .s3content{
-    width: 80%;
+    width: 95%;
     height: 80%;
     margin: 0 auto;
-  }
+    color: #4DABA6;
 
-  .signinbox, .signupbox {
-    border: 1px solid black;
-//    float: left;
-    width: 75%;
-    height: 50%;
-    margin: 5px 0px;
-  }
+    .s3Info{
+      height: 40%;
+      width: 40%;
+      background-color: rgba(255,255,255, .7) ;
+      padding: 10px;
+      margin-left: 30px;
+      float: left;
 
-  .signinbox {
 
-    #signinform {
-//      border: 1px solid black;
-      background-color: rgba(171, 228, 224, 0.6);;
-      height: 50%;
-      width: 20%;
-      float: right;
-      padding: 40px 0px  40px 0px;
+      h3 {
+
+        color: #2B5F5C;
+        text-align: justify;
+
+
+      }
     }
 
+    #signinform {
+      height: 40%;
+      width: 20%;
+      background-color: rgba(255,255,255, .7) ;
+      padding: 10px;
+      margin-left: 30px;
+      border: 1px solid black;
+
+    }
   }
+
+  }
+
+
+
+
+
+//FOOTER//
+
+.Footer{
+  float: left;
+  color: white;
+  margin: 0 auto;
+  width: 100%;
+  height: 35px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-color: $default-bgcolor;
+  text-align: left;
+
+  p{
+    margin-top: 10px;
+    margin-left: 5px;
+    display: inline-block;
+  }
+ul {
+  float: right;
+}
+
+  li{
+    display: inline-block;
+    color: white;
+    margin-top: -50px;
+    padding: 3px;
+  }
+
 }
