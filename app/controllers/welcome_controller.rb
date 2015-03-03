@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+
   end
 
   def new
@@ -10,4 +11,5 @@ class WelcomeController < ApplicationController
 
   def show
   end
+  
 end
