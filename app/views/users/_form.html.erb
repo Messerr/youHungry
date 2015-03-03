@@ -9,7 +9,7 @@
 
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
 	
 	<%= f.text_field :fname, placeholder: "First Name" %><br />
 	<%= f.text_field :lname, placeholder: "Last Name" %><br />
@@ -19,4 +19,9 @@
 	<%= f.text_area :bio, placeholder: "Bio"  %><br />
 	<%= f.password_field :password, placeholder: "Password"%><br />
 	<%= f.submit :class => 'formbuttons'%>
+	<br />
+<br />
+	<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+ 	<%= form.file_field :avatar %>
+	<% end %>
 <% end %>
