@@ -1,1 +1,48 @@
-<h1>You Hungry?</h1>
+<nav class="nav-bar">
+
+  <ul>
+    <li><a href="#firstPage" id="nav-home">Home</a></li>|
+    <li><a href="#secondPage" id="nav-about">About</a></li>|
+    <li><a href="#thirdPage" id="nav-signin">Sign In</a></li>|
+    <li><a href="#thirdPage" id="nav-signup">Sign Up</a></li>
+  </ul>
+
+
+
+</nav>
+
+<div id="fullpage">
+  <div class="section" id="sec1" data-anchor="firstPage">
+    <div>
+      <!--<h1>YouHungry?</h1>-->
+      <!--<div class="bubble">-->
+            <h2>Landing Page</h2>
+      <%= link_to 'Landing Page', users_path %>
+
+
+
+      <!--</div>-->
+    </div>
+  </div>
+  <div class="section" id="sec2">
+    <h2>
+      About Us
+    </h2>
+  </div>
+  <div class="section" id="sec3" data-anchor="lastPage">
+    <h2>
+      Sign In/Sign Up
+    </h2>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            scrollingSpeed: 700,
+            anchors: ['firstPage', 'secondPage', 'thirdPage' ]
+
+
+        });
+    });
+</script>
