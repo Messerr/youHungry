@@ -3,49 +3,9 @@ $default-bgcolor: rgba(71,95,93, 1);
 
 //NAV BAR//
 
-.nav-bar{
-  height: 40px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-//  margin-left: -2px;
-  background-color: $default-bgcolor;
-  color: white;
+@import 'navbar';
 
 
-  ul{
-    float: right;
-
-  }
-
-  li{
-    display: inline-block;
-    padding: 0px 5px;
-  }
-
-  a:link, a:visited{
-    color: white;
-
-    text-decoration: none;
-
-  }
-
-  h1 {
-    display: inline-block;
-    float: left;
-    padding: 0px 5px;
-    margin-top: 10px;
-    text-shadow: 2px 2px 5px black;
-  }
-
-  .WelcomeMessage {
-    display: inline-block;
-    float: left;
-  }
-
-
-}
 
 //BODY STYLES//
 
@@ -57,62 +17,59 @@ body{
 
 .fullpage{
   margin: -50px;
-
 }
+
+
+
 
 //SECTION ONE STYLES//
 
 #sec1{
+
   background-image: image_url('bg-2.jpg');
   background-size: cover;
-//  background-color: #213B2A;
 
   .welcomeHeader{
     width: 30%;
     margin-top: -300px;
     float: right;
     background-color: rgba(255,255,255, .7);
-//    font-weight: 700;
   }
 
-
 }
+
 
 
 //SECTION TWO STYLES//
 
 #sec2{
-//  background-color: $default-bgcolor;
+
   background-image: image_url('about.jpg');
   background-size: cover;
+  .aboutus {
+    margin-top: -100px;
+    color: white;
+  }
 
   .s2Content {
-//    color: white;
-//    border: 1px solid black;
     width: 95%;
     margin: 0 auto;
     height: 70%;
     padding: 5px;
 
-    background-size: cover;
-
 
     .about1 {
       float: right;
       width: 40%;
-//      border: 1px solid black;
       border-radius: 5px;
       margin-right:10px;
-      margin-top: 15%;
+      margin-top: 12%;
       background:rgba(255,255,255, .6) ;
 
       p{
-        text-align: center;
-        padding: 5px;
-
-
-
-
+        text-align: justify;
+        padding: 10px;
+        font-size: 1.2em;
       }
     }
 
@@ -150,78 +107,65 @@ body{
 //SECTION THREE STYLES//
 
 #sec3{
-  @import 'formstyle';
-  background-color: $default-bgcolor;
+  background-image: image_url('login2.jpg');
+  background-size: cover;
 
-  .s3content{
-    width: 95%;
+  .s3Content{
+    background-color:rgba(255,255,255, .7);
+    width: 70%;
     height: 80%;
     margin: 0 auto;
-    color: #4DABA6;
+    color: #2B5F5C;
+   }
 
-    .s3Info{
-      height: 40%;
-      width: 40%;
-      background-color: rgba(255,255,255, .7) ;
+  #signInBox {
+    float: left;
+
+    form {
+      border: 1px solid black;
       padding: 10px;
-      margin-left: 30px;
-      float: left;
 
 
-      h3 {
+      input {
+        padding: 10px;
+        margin: 5px;
+      }
 
-        color: #2B5F5C;
-        text-align: justify;
+      .buttonStyle {
+        border: 1px solid black;
+        height: 30px;
+        width: 60px;
+        padding: 5px;
+        color: white;
+        background-color: $default-bgcolor;
+      }
 
+      .buttonStyle:visited{
+        color: white;
+        text-decoration: none;
+      }
 
+      .buttonStyle:hover{
+        text-decoration: none;
+      }
+
+      .buttonStyle:link{
+        text-decoration: none;
       }
     }
-
-    #signinform {
-      height: 40%;
-      width: 20%;
-      background-color: rgba(255,255,255, .7) ;
-      padding: 10px;
-      margin-left: 30px;
-      border: 1px solid black;
-
-    }
   }
 
+  #signInInfo {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid black;
   }
+
+}
 
 
 
 
 
 //FOOTER//
-
-.Footer{
-  float: left;
-  color: white;
-  margin: 0 auto;
-  width: 100%;
-  height: 35px;
-  position:absolute;
-  bottom:0;
-  left:0;
-  background-color: $default-bgcolor;
-  text-align: left;
-
-  p{
-    margin-top: 10px;
-    margin-left: 5px;
-    display: inline-block;
-  }
-ul {
-  float: right;
-}
-
-  li{
-    display: inline-block;
-    color: white;
-    margin-top: -50px;
-    padding: 3px;
-  }
-
-}
+@import 'footer';

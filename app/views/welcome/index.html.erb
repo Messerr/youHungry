@@ -14,8 +14,12 @@
   </div>
 
   <div class="section" id="sec2">
-    <div class="s2Content">
+    <div class="aboutus">
       <h1>About Us</h1>
+    </div>
+
+    <div class="s2Content">
+
 
       <div class="about1">
         <p>
@@ -69,29 +73,37 @@
     </div>
   </div>
   <div class="section" id="sec3" data-anchor="lastPage">
-    <!--<div class="s3content">-->
-      <!--<h1>Are you ready to meet your match?</h1>-->
-      <!--<div class="s3Info">-->
-        <!--<h3>-->
-          <!--Existing user can simply log in using the form to the right.-->
-          <!--If you're a new user and you're ready to take the leap forward with us,-->
-          <!--simply click the sign up button below the log in! It takes about 1 minute-->
-          <!--sign up!-->
-        <!--</h3>-->
-      <!--</div>-->
 
-      <!--<div id="signinform">-->
-        <!--<a class="alert"><%= flash[:alert] if flash[:alert] %></a>-->
-        <!--<%= render 'shared/login' %>-->
-      <!--</div>-->
+    <div class="s3Content">
+
+        <div id="signInBox">
+          <%= render 'shared/login' %>
+        </div>
+
+        <div id="signInInfo">
+            <h1>
+              Existing User?
+            </h1>
+            <p>
+              Existing user can simply log in using the form to the left!
+            </p>
+            <h1>
+              New User?
+            </h1>
+            <p>
+              If you're a new user and you're ready to take the leap forward with us,
+              simply click the sign up button below the log in! It takes about 1 minute
+              sign up!
+            </p>
+        </div>
+
+    </div>
 
 
-      <!--<div class="signupbox">-->
-        <!--<div id="signupform">-->
 
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
+
+
+
 
   </div>
 </div>
@@ -101,7 +113,7 @@
 <script>
     $(document).ready(function() {
         $('#fullpage').fullpage({
-            scrollingSpeed: 800,
+            scrollingSpeed: 700,
             anchors: ['firstPage', 'secondPage', 'thirdPage' ]
 
 
