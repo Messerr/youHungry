@@ -1,4 +1,5 @@
 <h1><%= @user.fname %></h1>
+<h3><%= @user.gender %></h3>
 <h3><%= @user.bio %></h3>
 
 <% randomID = Random.new.rand(1..User.all.count) %>
