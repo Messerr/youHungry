@@ -29,7 +29,8 @@
             <li><a href="#secondPage" id="nav-about">About</a></li>|
             <li><a href="#thirdPage" id="nav-signin">Sign In</a></li>
         <% else %>
-            <li> <%= link_to 'Profile', @user %></li>
+            <li> <%= link_to 'Profile', @user %></li>|
+            <li><%= link_to 'Inbox', messages_path %></li>
           | <li>  <%= link_to 'Sign Out', logout_path %> </li>
         <% end %>
       </ul>

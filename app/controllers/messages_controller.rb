@@ -12,6 +12,9 @@ class MessagesController < ApplicationController
 	end
 
 	def show
-		
+
+	end
+
+	def index
 	end
 end
