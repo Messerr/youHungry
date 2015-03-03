@@ -1,17 +1,6 @@
-<nav class="nav-bar">
-
-  <ul>
-    <li><a href="#firstPage" id="nav-home">Home</a></li>|
-    <li><a href="#secondPage" id="nav-about">About</a></li>|
-    <li><a href="#thirdPage" id="nav-signin">Sign In</a></li>|
-    <li><a href="#thirdPage" id="nav-signup">Sign Up</a></li>
-  </ul>
 
 
-
-</nav>
-
-<div id="fullpage">
+<div id="fullpage" class="fullpage">
   <div class="section" id="sec1" data-anchor="firstPage">
     <div>
       <!--<h1>YouHungry?</h1>-->
@@ -30,9 +19,21 @@
     </h2>
   </div>
   <div class="section" id="sec3" data-anchor="lastPage">
-    <h2>
-      Sign In/Sign Up
-    </h2>
+    <div class="s3content">
+      <div class="signinbox">
+        <div id="signinform">
+          <%= render 'shared/login' %>
+        </div>
+
+      </div>
+
+      <div class="signupbox">
+        <div id="signupform">
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
