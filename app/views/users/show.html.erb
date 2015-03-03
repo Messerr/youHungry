@@ -1,2 +1,7 @@
 <h1><%= @user.fname %></h1>
 <h3><%= @user.bio %></h3>
+
+<% randomID = Random.new.rand(1..User.all.count) %>
+<% randUser = User.find(randomID) %>
+Users that might interest you: <%= link_to randUser.fname, user_path(randUser.id) %>
+
