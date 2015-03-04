@@ -112,8 +112,8 @@ body{
   background-size: cover;
 
   .s3Content{
-    background-color:rgba(255,255,255, .7);
-    width: 70%;
+//    background-color:rgba(255,255,255, .7);
+    width: 94%;
     height: 80%;
     margin: 0 auto;
     color: #2B5F5C;
@@ -123,8 +123,10 @@ body{
     float: left;
 
     form {
-      border: 1px solid black;
+      border-radius: 5px;
       padding: 10px;
+      background-color: $homeWhite;
+      margin-top: -35%;
 
 
       input {
@@ -159,7 +161,10 @@ body{
   #signInInfo {
     width: 40%;
     margin: 0 auto;
-    border: 1px solid black;
+//    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: $homeWhite;
   }
 
 }

@@ -8,8 +8,11 @@ class SessionsController < ApplicationController
 				flash[:notice] = "Successfully signed in!"
 				session[:user_id] = @user.id
         redirect_to @user
-			else
-				flash[:alert] = "Something went wrong"
+			elsif @user and @user.password == nil
+				flash[:alert] = "Email or Password cannot be blank!"
+        redirect_to '/#thirdPage'
+      else
+        flash[:alert] = "Something went wrong!"
         redirect_to '/#thirdPage'
 			end
 

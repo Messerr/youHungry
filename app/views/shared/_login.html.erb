@@ -5,7 +5,7 @@
 	</p>
 <% else %>
 
-	<%= form_tag(signin_path, method: :post) do %>
+	<%= form_tag(signin_path, method: :post, class:'login-box') do %>
         <h1>Log In</h1>
 		<%= label_tag %>
 		<%= email_field_tag :email, nil, placeholder: 'Email' %>
@@ -13,7 +13,7 @@
 		<%= label_tag %>
 		<%= password_field_tag :password, nil, placeholder: 'Password' %>
 		<br>
-		<%= link_to "Sign up", new_user_path, data: {formredirect: true, remote: true }, class: 'buttonStyle' %>
+		<%= link_to "Sign up", new_user_path, remote: true, class: 'buttonStyle', id: 'sign-up-link' %>
 		<%= submit_tag "Login", class: 'buttonStyle' %>
 
 		
