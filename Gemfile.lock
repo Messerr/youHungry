@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_follower (0.2.1)
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -87,6 +88,8 @@ GEM
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.3.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
@@ -132,6 +135,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    populator (1.0.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -212,9 +216,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_follower
   byebug
   chosen-rails
   coffee-rails (~> 4.1.0)
+  faker
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
@@ -222,6 +228,7 @@ DEPENDENCIES
   jquery-ui-rails
   mailboxer
   paperclip (~> 4.2)
+  populator
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

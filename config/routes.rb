@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :restaurants
+
   resources :conversations, only: [:index, :show, :destroy] do
   member do
     post :reply
@@ -16,7 +18,7 @@ end
   post '/signin', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-
+  
 
 
 end

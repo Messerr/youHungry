@@ -28,7 +28,10 @@ gem 'geocoder'
 gem 'yelp'
 gem 'mailboxer'
 gem 'chosen-rails'
+gem "acts_as_follower"
 gem 'jquery-turbolinks'
+gem 'populator'
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -44,6 +44,10 @@ class UsersController < ApplicationController
 
   end
 
+  def like
+    
+  end
+
   def update
   		if @user.update(user_params)
   		redirect_to @user, notice: "User successfully updated."

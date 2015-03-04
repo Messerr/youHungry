@@ -32,6 +32,13 @@
 					<p><%= x.name %></p>
 					<p><img src="<%= x.rating_img_url %>"> <%= x.review_count.to_s %></p>
 					<a href="<%= x.url %>">Link To</a>
+
+
+					<a href="">Like!</a>
+					<%= link_to "Like", restaurant_path() %>
+
+
+
 				</div>
 				<div class="col-md-2">
 					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>

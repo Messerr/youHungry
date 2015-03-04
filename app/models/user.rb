@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+	acts_as_follower
+	
 	geocoded_by :address
 	after_validation :geocode
 
