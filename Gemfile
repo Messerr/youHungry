@@ -26,7 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'geocoder'
 gem 'yelp'
-gem 'bootstrap-sass', '~> 3.3.3'
 gem 'mailboxer'
 
 
