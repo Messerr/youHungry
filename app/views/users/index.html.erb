@@ -1,11 +1,4 @@
 
-<% if current_user %>
-
-<% else %>
-<h1>Login</h1>
-<% end %>
-<%= render 'shared/login' %>
-
 
 <%= flash[:search_fail] if flash[:search_fail] %>
 <%= render 'shared/search_bar' %>
@@ -26,7 +19,7 @@
 				<div class="col-md-2">
 					<b>Category</b>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2" id ="yelp_picture">
 					<b>Picture</b>
 				</div>
 				<div class="col-md-2">
@@ -52,7 +45,7 @@
 						<% end %>
 					</p>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2" id ="yelp_picture">
 					<img src="<%= x.image_url %>">
 				</div>
 				<div class="col-md-2">
