@@ -1,4 +1,12 @@
-<h1>Log In</h1>
+
+<% if current_user %>
+
+<% else %>
+<h1>Login</h1>
+<% end %>
+<%= render 'shared/login' %>
+
+
 <%= flash[:search_fail] if flash[:search_fail] %>
 <%= render 'shared/search_bar' %>
 <% if @search != nil %>
@@ -61,3 +69,5 @@
 		<% end %>
 	
 <% end %>
+
+

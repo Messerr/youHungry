@@ -1,0 +1,4 @@
+<b>Subject: <%= current_user.mailbox.inbox.find(params[:conversation_id]).subject%></b><br />
+<% current_user.mailbox.inbox.find(params[:conversation_id]).messages.each do |x| %>
+Body: <%= x.body %>
+<% end %>

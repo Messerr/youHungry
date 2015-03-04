@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 	                  token: 'hX0xp3x780IvbSGaix4tzEUDtRwha10T',
 	                  token_secret: 'oWsYW3C4U2EEjLkb4-sjsax9d_Y'
              	   })
-
   end
 
   def show
@@ -25,16 +24,13 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
+
   end
 
   def create
   	@user = User.new(user_params)
-  		if@user.save
-  			session[:user_id] = @user.id
-  				redirect_to @user, notice: "New user created."	
-  	end
-    #Needed to update users address based on there current ip when creating there account
-    User.last.update(address: remote_ip)
+
+
   end
 
   def update
@@ -55,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-  	params.require(:user).permit(:fname, :lname, :bio, :email, :password)
+  	params.require(:user).permit(:fname, :lname, :bio, :email, :password, :gender, :preference, :avatar)
   end
 
   def current_user

@@ -1,1 +1,122 @@
-<h1>You Hungry?</h1>
+
+<div id="fullpage" class="fullpage">
+  <div class="section" id="sec1" data-anchor="firstPage">
+    <div>
+      <div class="welcomeHeader">
+        <h1>YouHungry?</h1>
+        <h3>A fresh approach to dating!</h3>
+
+      </div>
+
+      <!--<%= link_to 'Landing Page', users_path %>-->
+
+    </div>
+  </div>
+
+  <div class="section" id="sec2">
+    <div class="aboutus">
+      <h1>About Us</h1>
+    </div>
+
+    <div class="s2Content">
+
+
+      <div class="about1">
+        <p>
+          Are <em>YouHungry?</em> If so, you're in luck! YouHungry is a new innovative dating site created
+          to bring together users who want to meet up for breakfast, lunch, or dinner.
+          If you have never experienced the power of internet dating you are missing out on an incredible opportunity.
+          If you're single and seeking friendship, romance or marriage, look beyond your regular routine and generic online dating sites.
+          Discover an online community of singles who want to meet you! Why settle for less? There is no reason to wait!
+          The YouHungry.com community offers a safe and easy way to discover singles near you.
+          With thousands of singles in our community, you could be moments away from meeting your next true partner!
+        </p>
+      </div>
+
+
+
+      <div class="sitePerks">
+        <ul>
+          <li>
+            <i class="fa fa-heart-o fa-5x"></i>
+            <h1>Meet!</h1>
+            <h3>
+              With our easy to use website, meeting someone on YouHungry is easy and fun!
+              Join us and meet someone today!
+            </h3>
+
+          </li>
+          <li>
+            <i class="fa fa-weixin fa-5x"></i>
+            <h1>Chat!</h1>
+            <h3>
+              See someone you like? Want to grab food? Send them a chat!
+              Our click to chat feature keeps everything simple!
+            </h3>
+          </li>
+          <li>
+            <i class="fa fa-cutlery fa-5x"></i>
+            <h1>Eat!</h1>
+            <h3>
+              YouHungry? Why eat alone?
+              Our site is focused on getting you the food choices you want!
+              While Meeting someone!
+
+            </h3>
+          </li>
+        </ul>
+
+
+
+      </div>
+
+    </div>
+  </div>
+  <div class="section" id="sec3" data-anchor="lastPage">
+
+    <div class="s3Content">
+
+        <div id="signInBox">
+          <%= render 'shared/login' %>
+        </div>
+
+        <div id="signInInfo">
+            <h1>
+              Existing User?
+            </h1>
+            <p>
+              Existing user can simply log in using the form to the left!
+            </p>
+            <h1>
+              New User?
+            </h1>
+            <p>
+              If you're a new user and you're ready to take the leap forward with us,
+              simply click the sign up button below the log in! It takes about 1 minute
+              sign up!
+            </p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            scrollingSpeed: 700,
+            anchors: ['firstPage', 'secondPage', 'thirdPage' ]
+
+
+        });
+    });
+</script>

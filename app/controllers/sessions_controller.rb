@@ -2,14 +2,17 @@ class SessionsController < ApplicationController
 
 	def create
 		@user = User.find_by(email: params[:email])
-		@user.update(address: remote_ip)
+
 			if @user and @user.password == params[:password]
+        @user.update(address: remote_ip)
 				flash[:notice] = "Successfully signed in!"
 				session[:user_id] = @user.id
+        redirect_to @user
 			else
 				flash[:alert] = "Something went wrong"
+        redirect_to '/#thirdPage'
 			end
-			redirect_to root_path
+
 	end
 
 	def destroy

@@ -1,3 +1,172 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$default-bgcolor: rgba(71,95,93, 1);
+$homeWhite: rgba(255,255,255, .7);
+
+
+//NAV BAR//
+
+@import 'navbar';
+
+
+
+//BODY STYLES//
+
+body{
+  color: #2B5F5C;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.fullpage{
+  margin: -50px;
+}
+
+
+
+
+//SECTION ONE STYLES//
+
+#sec1{
+
+  background-image: image_url('bg-2.jpg');
+  background-size: cover;
+
+  .welcomeHeader{
+    width: 30%;
+    margin-top: -300px;
+    float: right;
+    background-color: $homeWhite;
+  }
+
+}
+
+
+
+//SECTION TWO STYLES//
+
+#sec2{
+
+  background-image: image_url('about.jpg');
+  background-size: cover;
+  .aboutus {
+    margin-top: -100px;
+    color: white;
+  }
+
+  .s2Content {
+    width: 95%;
+    margin: 0 auto;
+    height: 70%;
+    padding: 5px;
+
+
+    .about1 {
+      float: right;
+      width: 40%;
+      border-radius: 5px;
+      margin-right:10px;
+      margin-top: 12%;
+      background:rgba(255,255,255, .6) ;
+
+      p{
+        text-align: justify;
+        padding: 10px;
+        font-size: 1.2em;
+      }
+    }
+
+
+
+    .sitePerks{
+      background-color: $homeWhite;
+      height: 32%;
+      width: 95%;
+      clear: both;
+      position: absolute;
+      bottom: 0;
+      padding-top: 10px;
+
+      ul {
+
+      }
+
+      li {
+        color: #2B5F5C;
+        display: inline-block;
+//        border: 1px solid black;
+        width: 29%;
+         p{
+          text-align: center;
+          color: #2B5F5C;
+        }
+
+      }
+    }
+  }
+}
+
+
+//SECTION THREE STYLES//
+
+#sec3{
+  background-image: image_url('login2.jpg');
+  background-size: cover;
+
+  .s3Content{
+    background-color:rgba(255,255,255, .7);
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    color: #2B5F5C;
+   }
+
+  #signInBox {
+    float: left;
+
+    form {
+      border: 1px solid black;
+      padding: 10px;
+
+
+      input {
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .buttonStyle {
+        border: 1px solid black;
+        height: 30px;
+        width: 60px;
+        padding: 5px;
+        color: white;
+        background-color: $default-bgcolor;
+      }
+
+      .buttonStyle:visited{
+        color: white;
+        text-decoration: none;
+      }
+
+      .buttonStyle:hover{
+        text-decoration: none;
+      }
+
+      .buttonStyle:link{
+        text-decoration: none;
+      }
+    }
+  }
+
+  #signInInfo {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+
+}
+
+
+
+
+
+//FOOTER//
+@import 'footer';
