@@ -1,0 +1,5 @@
+<ul>
+<% current_user.mailbox.inbox.each do |x| %>
+	<li><%=link_to x.subject, conversation_messages_path(x.id) %></li>
+<% end %>
+</ul>

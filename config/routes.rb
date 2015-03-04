@@ -1,25 +1,15 @@
 Rails.application.routes.draw do
 
-resources :users
+  resources :users
 
-resources :messages do
-  member do
-    post :new
-  end
-end
-resources :conversations do
-  resource :messages
+  resources :conversations, only: [:index, :show, :destroy] do
   member do
     post :reply
-    post :trash
-    post :untrash
   end
- collection do
-    get :trashbin
-    post :empty_trash
- end
- end
-
+end
+  resources :messages, only: [:new, :create]
+  
+  
   root 'welcome#index'
 
   get '/signin', to: 'sessions#new'

@@ -1,8 +1,14 @@
 module ApplicationHelper
+  
 	def current_user
 		session[:user_id] ? User.find(session[:user_id]) : nil
-  end
+	end
 
+  client = Yelp::Client.new({ consumer_key: 'XNcYgteUH-DLeURnXTcp3Q',
+                          consumer_secret: 'zl4HAHLoHq3h2FKL6IZSM3qvhqU',
+                          token: 'hX0xp3x780IvbSGaix4tzEUDtRwha10T',
+                          token_secret: 'oWsYW3C4U2EEjLkb4-sjsax9d_Y'
+                        })
   def set_user
     @user = User.find(params[:id])
   end
@@ -10,5 +16,4 @@ module ApplicationHelper
   def user_params
   	params.require(:user).permit(:fname, :lname, :bio, :email, :password, :gender, :preference, :avatar)
   end
-
 end

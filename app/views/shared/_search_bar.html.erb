@@ -1,0 +1,6 @@
+<%= form_tag(users_path, method: :get, :id => 'searchbar') do %>
+<div>
+	<%= text_field_tag :search, params[:search], placeholder: 'Type here' %>
+	<%= submit_tag "Search", :id => "submit", :name => nil %>
+	</div>
+<% end %>
