@@ -6,12 +6,6 @@ class ConversationsController < ApplicationController
     @conversations = @mailbox.inbox
   end
  
-  private
- 
-  def get_mailbox
-    @mailbox ||= current_user.mailbox
-  end
-
   def show
   end
 
@@ -27,6 +21,9 @@ class ConversationsController < ApplicationController
     @conversation ||= @mailbox.conversations.find(params[:id])
   end
 	
+  def get_mailbox
+    @mailbox ||= current_user.mailbox
+  end
 
 
 end
