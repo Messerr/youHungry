@@ -1,2 +1,63 @@
 <h1>Log In</h1>
-<%= render 'shared/login' %>
+<%= flash[:search_fail] if flash[:search_fail] %>
+<%= render 'shared/search_bar' %>
+<% if @search != nil %>
+		<% begin %>
+		<% response = @client.search_by_coordinates({ latitude: @user.latitude, longitude: @user.longitude }, { term: 'food', category_filter: params[:search] }) %>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<b>Restaurants</b>
+				</div>
+				<div class="col-md-2">
+					<b>Address</b>
+				</div>
+				<div class="col-md-2">
+					<b>Phone Number</b>
+				</div>
+				<div class="col-md-2">
+					<b>Category</b>
+				</div>
+				<div class="col-md-2">
+					<b>Picture</b>
+				</div>
+				<div class="col-md-2">
+					<b>Comment</b>
+				</div>
+			</div>
+		<% response.businesses.each do |x| %>
+			<div class="row">
+				<div class="col-md-2">
+					<p><%= x.name %></p>
+					<p><img src="<%= x.rating_img_url %>"> <%= x.review_count.to_s %></p>
+					<a href="<%= x.url %>">Link To</a>
+				</div>
+				<div class="col-md-2">
+					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>
+				</div>
+				<div class="col-md-2">
+					<p><%= x.display_phone.to_s.gsub('+', '') %></p>
+				</div>
+				<div class="col-md-2">
+					<p><% x.categories.each do |x| %>
+						<%= x[0] %> - 
+						<% end %>
+					</p>
+				</div>
+				<div class="col-md-2">
+					<img src="<%= x.image_url %>">
+				</div>
+				<div class="col-md-2">
+					<p><%= x.snippet_text %></p>
+				</div>
+			</div>
+		<% end %>
+		</div>
+		<% rescue %>
+			<script type="text/javascript">
+    			window.location.href="/users"
+  			</script>
+			<%= flash[:search_fail] = "Search Failed" %>
+		<% end %>
+	
+<% end %>
