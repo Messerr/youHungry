@@ -11,6 +11,9 @@
  * file per style scope.
  */
 
+
+
+
 @import "bootstrap-sprockets";
 
 
@@ -6667,4 +6670,12 @@ button.close {
 #search:-ms-placeholder {
    color: #9c9c9c;
    font-style: italic;
+}
+
+@import "chosen";
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }

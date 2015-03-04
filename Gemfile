@@ -26,9 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'geocoder'
 gem 'yelp'
-gem 'bootstrap-sass', '~> 3.3.3'
 gem 'mailboxer'
-
+gem 'chosen-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
