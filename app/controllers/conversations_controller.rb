@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
   	before_action :get_conversation, except: [:index]
 
 	def index
-    @conversations = @mailbox.inbox.paginate(page: params[:page], per_page: 10)
+    @conversations = @mailbox.inbox
   end
  
   private

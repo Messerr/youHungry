@@ -1,7 +1,5 @@
-<% page_header "Conversation" %>
- 
-<p>Chatting with
-  <%= render 'conversations/participants', conversation: @conversation %>
+<% "Conversation" %>
+
 </p>
  
 <div class="panel panel-default">
@@ -13,11 +11,10 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <%= message.sender.name %>
+            <%= message.sender.fname %>
           </div>
- 
           <div class="media-body">
-            <h6 class="media-heading"><%= message.sender.name %>
+            <h6 class="media-heading"><%= message.sender.fname %>
               says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
             <%= message.body %>
           </div>

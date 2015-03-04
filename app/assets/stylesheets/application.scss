@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "chosen";
+
 #searchbar
 {
     background-color: #eaf8fc;
@@ -108,7 +110,7 @@
    font-style: italic;
 }
 
-@import "chosen";
+
 .messages {
   max-height: 400px;
   overflow-y: auto;
