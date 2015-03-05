@@ -1,15 +1,7 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update, :show, :destroy]
 
-   def like
-      current_user.follow()
-      redirect_to users_path
-   end
-
-   def unlike
-      current_user.stop_following()
-      redirect_to users_path
-   end
+   
 
 
   def index
@@ -53,9 +45,6 @@ class UsersController < ApplicationController
 
   end
 
-  def like
-    
-  end
 
   def update
   		if @user.update(user_params)

@@ -12,15 +12,35 @@
 </div>
 
 
+<% if @user.id == current_user.id %>
+	<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
+<% end %>
 
 
 
 
-<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
+
+
+
 
 <% randomID = Random.new.rand(1..User.all.count) %>
+
 <% randUser = User.find(randomID) %>
-Users that might interest you: <%= link_to randUser.fname, user_path(randUser.id) %>
+
+
+Users that might interest you: 
+<ul>
+<% (0..5).each do |x| %>
+<% randID = Random.new.rand(1..User.all.count) %>
+<% randUser = User.find(randID) %>
+<li><%= link_to randUser.fname, user_path(randUser.id) %></li>
+<% end %>
+</ul>
 <br />
 
-<%= @user.all_following %>
+Users Liked Restaurants:
+<ul>
+<% @user.all_following.each do |x| %>
+	<li><%= x.name %></li>
+<% end %>
+</ul>
