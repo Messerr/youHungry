@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
 
   def update
     @user = current_user
-    @restaurant = Restaurant.find(params[:name])
+    @restaurant = Restaurant.find(params[:id])
     @user.stop_following(@restaurant)
     flash[:notice] = "Restaurant Unliked!"
     redirect_to users_path
