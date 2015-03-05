@@ -1,5 +1,18 @@
+<div class="home-user-image">
+  <h3>Welcome <%= @user.fname %>!</h3>
+  <%= image_tag @user.avatar.url(:thumb) %>
+  <%= flash[:notice] if flash[:notice] %>
+</div>
 
 
+<div>
+
+</div>
+
+<div class="search-bar">
+  <div class="home-user-search">
+    <h2>YouHungry? Search Now!</h2>
+  </div>
 <%= flash[:search_fail] if flash[:search_fail] %>
 <%= render 'shared/search_bar' %>
 <% if @search != nil %>
@@ -16,42 +29,31 @@
 				<div class="col-md-2">
 					<b>Phone Number</b>
 				</div>
-				<div class="col-md-2">
-					<b>Category</b>
-				</div>
 				<div class="col-md-2" id ="yelp_picture">
 					<b>Picture</b>
 				</div>
-				<div class="col-md-2">
-					<b>Comment</b>
-				</div>
 			</div>
+          <hr/>
 		<% response.businesses.each do |x| %>
 			<div class="row">
 				<div class="col-md-2">
-					<p><%= x.name %></p>
+					<p><b><%= x.name %></b></p>
 					<p><img src="<%= x.rating_img_url %>"> <%= x.review_count.to_s %></p>
-					<a href="<%= x.url %>">Link To</a>
+					<a href="<%= x.url %>">View Restaurant</a> <br>
+
+                    <%= link_to 'Like', restaurants_path(name: x.id), method: :post, remote: true%>
 				</div>
 				<div class="col-md-2">
 					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>
 				</div>
 				<div class="col-md-2">
-					<p><%= x.display_phone.to_s.gsub('+', '') %></p>
-				</div>
-				<div class="col-md-2">
-					<p><% x.categories.each do |x| %>
-						<%= x[0] %> - 
-						<% end %>
-					</p>
+					<p><% x.display_phone.to_s.gsub('+', '') %></p>
 				</div>
 				<div class="col-md-2" id ="yelp_picture">
 					<img src="<%= x.image_url %>">
 				</div>
-				<div class="col-md-2">
-					<p><%= x.snippet_text %></p>
-				</div>
 			</div>
+              <hr/>
 		<% end %>
 		</div>
 		<% rescue %>
@@ -62,5 +64,7 @@
 		<% end %>
 	
 <% end %>
+
+</div>
 
 

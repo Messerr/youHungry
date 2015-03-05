@@ -28,7 +28,10 @@ gem 'geocoder'
 gem 'yelp'
 gem 'mailboxer'
 gem 'chosen-rails'
+gem "acts_as_follower"
 gem 'jquery-turbolinks'
+gem 'populator'
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,7 +45,7 @@ gem 'jquery-turbolinks'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'quiet_assets'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

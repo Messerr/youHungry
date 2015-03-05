@@ -9,6 +9,8 @@ module ApplicationHelper
                           token: 'hX0xp3x780IvbSGaix4tzEUDtRwha10T',
                           token_secret: 'oWsYW3C4U2EEjLkb4-sjsax9d_Y'
                         })
+
+  
   def set_user
     @user = User.find(params[:id])
   end

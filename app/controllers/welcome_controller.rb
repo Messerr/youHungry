@@ -2,7 +2,11 @@ class WelcomeController < ApplicationController
 
   def index
     respond_to do |format|
-        format.html
+        format.html {
+          if current_user
+            redirect_to users_path
+          end
+        }
         format.js
     end
   end

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-
+	acts_as_followable
+  acts_as_follower
+	
 	geocoded_by :address
 	after_validation :geocode
 
@@ -10,6 +12,6 @@ class User < ActiveRecord::Base
 
 
   def mailboxer_email(current_user)
- 	  return :mailboxer_email
+ 	  :mailboxer_email
 	end
 end
