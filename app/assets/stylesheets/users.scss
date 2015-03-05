@@ -6,7 +6,8 @@
 .home-user-image {
 //  border: 1px solid black;
   margin-top: -20px;
-  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
   position: fixed;
   background-color: white;
   text-align: left;
@@ -40,7 +41,6 @@
 }
 
 .user-show-image {
-  float: left;
   text-align: left;
 }
 

@@ -18,28 +18,28 @@
 
 <p>Users that might interest you:</p>
 <div id="scroll">
-<ul>
-	<% 15.times do %>
-	<% random_user = rand(1..User.all.count) %>
-	<% while random_user == current_user.id do %>
-		<% random_user = rand(1..User.all.count) %>
-	<% end %>
-	<li>
-	<%= link_to (image_tag User.find(random_user).avatar.url(:medium)), user_path(User.find(random_user).id) %>
-	<br>
-	<%= link_to User.find(random_user).fname, user_path(User.find(random_user).id) %> 
-	</li>
-	<% end %>
+	<ul>
+		<% 15.times do %>
+			<% random_user = rand(1..User.all.count) %>
+			<% while random_user == current_user.id do %>
+				<% random_user = rand(1..User.all.count) %>
+			<% end %>
+			<li>
+			<%= link_to (image_tag User.find(random_user).avatar.url(:medium)), user_path(User.find(random_user).id) %>
+			<br>
+			<%= link_to User.find(random_user).fname, user_path(User.find(random_user).id) %> 
+			</li>
+		<% end %>
 
-</ul>
+	</ul>
 </div>
 
 
 <br />
 
 Users Liked Restaurants:
-<ul>
-<% @user.all_following.each do |x| %>
-	<li><%= x.name %></li>
+<ol>
+<% @user.all_following.each do |rest| %>
+	<li><%= rest.name %></li>
 <% end %>
-</ul>
+</ol>

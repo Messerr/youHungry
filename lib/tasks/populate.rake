@@ -5,7 +5,7 @@ namespace :db do
 		require 'faker'
 		require "acts_as_follower"
 
-		[User, Restaurant].each(&:delete_all)
+		[User, Restaurant, Follow].each(&:delete_all)
 
 		User.populate(500) do |user|
 			user.fname = Faker::Name.first_name

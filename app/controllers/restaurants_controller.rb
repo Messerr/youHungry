@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
     redirect_to users_path
   end
 
-  def destroy
+  def update
     @user = current_user
     @restaurant = Restaurant.find(params[:name])
     @user.stop_following(@restaurant)
