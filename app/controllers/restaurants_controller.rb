@@ -6,9 +6,18 @@ class RestaurantsController < ApplicationController
     @restaurant.name = params[:name]
      if @restaurant.save
         @user.follow(@restaurant)
+        flash[:notice] = "Restaurant Liked!"
      else
        flash[:notice] = @restaurant.errors.full_messages
      end
+    redirect_to users_path
+  end
+
+  def destroy
+    @user = current_user
+    @restaurant = Restaurant.find(params[:name])
+    @user.stop_following(@restaurant)
+    flash[:notice] = "Restaurant Unliked!"
     redirect_to users_path
   end
 
