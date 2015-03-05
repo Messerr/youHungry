@@ -1,6 +1,7 @@
 <div class="home-user-image">
   <h3>Welcome <%= @user.fname %>!</h3>
   <%= image_tag @user.avatar.url(:thumb) %>
+  <%= flash[:notice] if flash[:notice] %>
 </div>
 
 
@@ -39,13 +40,14 @@
 					<p><b><%= x.name %></b></p>
 					<p><img src="<%= x.rating_img_url %>"> <%= x.review_count.to_s %></p>
 					<a href="<%= x.url %>">View Restaurant</a> <br>
-                    
+
+                    <%= link_to 'Like', restaurants_path(name: x.id), method: :post, remote: true%>
 				</div>
 				<div class="col-md-2">
 					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>
 				</div>
 				<div class="col-md-2">
-					<p><%= x.display_phone.to_s.gsub('+', '') %></p>
+					<p><% x.display_phone.to_s.gsub('+', '') %></p>
 				</div>
 				<div class="col-md-2" id ="yelp_picture">
 					<img src="<%= x.image_url %>">
