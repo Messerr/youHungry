@@ -12,14 +12,10 @@
 </div>
 
 
+<% if @user.id == current_user.id %>
+	<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
+<% end %>
 
-
-
-
-<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
-
-<% randomID = Random.new.rand(1..User.all.count) %>
-<% randUser = User.find(randomID) %>
 <p>Users that might interest you:</p>
 <div id="scroll">
 <ul>
@@ -41,10 +37,9 @@
 
 <br />
 
-<%= @user.all_following %>
-
-
-<!-- while random_user == current_user.id do
-	random_user = random(1..User.all)
-end
- -->
+Users Liked Restaurants:
+<ul>
+<% @user.all_following.each do |x| %>
+	<li><%= x.name %></li>
+<% end %>
+</ul>

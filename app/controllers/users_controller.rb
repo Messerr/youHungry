@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update, :show, :destroy]
 
-
+   
 
 
   def index
@@ -45,9 +45,6 @@ class UsersController < ApplicationController
 
   end
 
-  def like
-    
-  end
 
   def update
   		if @user.update(user_params)
@@ -73,5 +70,7 @@ class UsersController < ApplicationController
   def current_user
     session[:user_id] ? User.find(session[:user_id]) :nil
   end
+
+
 
 end
