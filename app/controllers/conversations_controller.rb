@@ -17,7 +17,7 @@ class ConversationsController < ApplicationController
  
   private
  
-  def get_conversation1
+  def get_conversation
     @conversation ||= @mailbox.conversations.find(params[:id])
   end
 	
