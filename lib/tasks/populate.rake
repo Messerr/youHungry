@@ -18,6 +18,7 @@ namespace :db do
 			user.gender = ['Male', 'Female']
 			user.address = Faker::Address.street_address
 			user.preference = ['Male', 'Female']
+			avatar_file_name = "missing.png"
 		end
 
 		Restaurant.populate(100..250) do |restaurant|
