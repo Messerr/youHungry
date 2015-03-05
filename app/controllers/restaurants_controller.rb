@@ -27,5 +27,3 @@ class RestaurantsController < ApplicationController
   end
 end
 
-
-@restaurant = params[:name]
