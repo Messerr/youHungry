@@ -1,6 +1,6 @@
 <div class="home-user-image">
   <h3>Welcome <%= @user.fname %>!</h3>
-  <%= image_tag @user.avatar.url(:thumb) %>
+  <%= image_tag @user.avatar.url(:medium) %>
   <%= flash[:notice] if flash[:notice] %>
 </div>
 
@@ -42,7 +42,7 @@
 					<a href="<%= x.url %>">View Restaurant</a> <br>
 
                     <%= link_to 'Like', restaurants_path(name: x.id), method: :post, remote: true%>
-                    <%= link_to 'Unlike', restaurants_path(name: x.id), method: :post, remote: true%>
+                    <%= link_to 'Unlike', unlike_path(name: x.id), method: :post, remote: true%>
 				</div>
 				<div class="col-md-2">
 					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>
