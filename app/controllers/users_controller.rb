@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update, :show, :destroy]
 
+   def like
+      current_user.follow()
+      redirect_to users_path
+   end
 
+   def unlike
+      current_user.stop_following()
+      redirect_to users_path
+   end
 
 
   def index
@@ -68,5 +76,7 @@ class UsersController < ApplicationController
   def current_user
     session[:user_id] ? User.find(session[:user_id]) :nil
   end
+
+
 
 end
