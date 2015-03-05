@@ -43,3 +43,38 @@
   float: left;
   text-align: left;
 }
+
+#scroll {
+    max-width:80%;
+    height:210px;
+    border: 2px solid #bed5cd;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: 0 0 10px #000;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#scroll ul {
+  float: left;
+  margin-right: -999em;
+  white-space: nowrap;
+  list-style: none;
+  -webkit-padding-start: 0px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+
+#scroll li {
+
+  text-align: center;
+  float: left;
+  display: inline;
+}
+
+#scroll img {
+  height: 175px;
+  width: auto;
+}
+
