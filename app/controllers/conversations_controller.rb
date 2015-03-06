@@ -17,6 +17,11 @@ class ConversationsController < ApplicationController
 	flash[:success] = 'Reply sent'
 	redirect_to conversation_path(@conversation)
   end
+
+  def destroy
+    @conversation.move_to_trash(current_user)
+    redirect_to conversations_path
+  end
  
   private
  
