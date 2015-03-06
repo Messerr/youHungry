@@ -29,7 +29,7 @@
 		<ul>
 			<% 15.times do %>
 				<% random_user = rand(1..User.all.count) %>
-				<% while random_user == current_user.id do %>
+				<% while ((random_user == current_user.id) and ((User.find(random_user).gender.downcase)) != (current_user.preference.downcase)) do %>
 					<% random_user = rand(1..User.all.count) %>
 				<% end %>
 				<li>
