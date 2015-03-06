@@ -1,3 +1,24 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+textarea {
+	width: 75%;
+	height: 125px;
+}
+input {
+	width: 75%;
+	margin-bottom: 15px;
+}
+
+select {
+
+}
+
+#message_all_form {
+	position: fixed;
+    top: 35%;
+    left: 50%;
+    margin-left: -50%;
+    width: 100%;
+    height: 100%;
+}
