@@ -47,6 +47,7 @@
                     <%= link_to 'Like', restaurants_path(name: x.id), method: :post, remote: true%>
                 	 <br/>
                     <%= link_to 'Unlike', unlike_path(name: x.id), method: :post, remote: true%>
+                    <br />
 				</div>
 				<div class="col-md-2">
 					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>

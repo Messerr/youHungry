@@ -1,7 +1,3 @@
-<div id="top_profile">
-  <h1><%= @user.fname %>'s Profile</h1>
-</div>
-
 <div id="left_profile">
 	<div class="user-show-image">
 	  <h2><%= @user.fname %> <%= @user.lname %></h2>
@@ -9,8 +5,13 @@
 	  <h3>Gender: <%= @user.gender %></h3>
 	  <h3 id="bio_text">Bio: <br/> <span><%= @user.bio %></span></h3><br />
 	</div>
+
 	<% if @user.id == current_user.id %>
 		<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
+	<% end %>
+
+	<% if @user.id != current_user.id %>
+		<%= link_to 'Send Message', new_message_path %>
 	<% end %>
 </div>
 
@@ -24,23 +25,20 @@
 	<% end %>
 	</ul>
 </div>
-
+<% if current_user == @user %>
 <div id="bottom_profile">
 	<p>Users that might interest you:</p>
 	<div id="scroll">
+	here they are
 		<ul>
-			<% 15.times do %>
-				<% random_user = rand(1..User.all.count) %>
-				<% while ((random_user == current_user.id) and ((User.find(random_user).gender.downcase)) != (current_user.preference.downcase)) do %>
-					<% random_user = rand(1..User.all.count) %>
-				<% end %>
+			<% @candidates.each do |candidate| %>
 				<li>
-				<%= link_to (image_tag User.find(random_user).avatar.url(:medium)), user_path(User.find(random_user).id) %>
+				<%= link_to(image_tag(candidate.avatar.url(:medium)), user_path(candidate)) %>
 				<br>
-				<%= link_to User.find(random_user).fname, user_path(User.find(random_user).id) %> 
+				<%= link_to candidate.fname, user_path(candidate) %> 
 				</li>
 			<% end %>
-
 		</ul>
 	</div>
 </div>
+<% end %>

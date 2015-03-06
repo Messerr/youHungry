@@ -22,6 +22,10 @@ class RestaurantsController < ApplicationController
     redirect_to users_path
   end
 
+  def show
+    @restaurant = params[:name]
+  end
+
 
   private
   def restaurant_params

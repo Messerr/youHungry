@@ -29,4 +29,12 @@ $default-bgcolor: rgba(71,95,93, 1);
     margin-top: -50px;
     padding: 3px;
   }
+
+  .footerlink {
+    color: white;
+  }
+
+  .footerlink:hover {
+    text-shadow: 1px 1px 1px black;
+  }
 }

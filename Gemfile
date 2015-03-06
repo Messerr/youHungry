@@ -32,6 +32,7 @@ gem "acts_as_follower"
 gem 'jquery-turbolinks'
 gem 'populator'
 gem 'faker'
+# gem 'annyang-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

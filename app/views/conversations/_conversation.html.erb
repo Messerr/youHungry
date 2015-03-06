@@ -1,5 +1,9 @@
 <li class="list-group-item clearfix">
   <%= link_to conversation.subject, conversation_path(conversation) %>
   <p><%= conversation.last_message.body %>
-   <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+  <% if conversation.last_message.sender.id == current_user.id %>
+   <small>(<span class="text-muted">From: You <%= conversation.last_message.created_at.strftime("%B %-d %Y, %H:%M:%S") %></span>)</small></p>
+   <% else %>
+   <small>(<span class="text-muted">From: <%=conversation.last_message.sender.fname %> <%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+   <% end %>
 </li>

@@ -3,6 +3,7 @@
  
 <div class="panel panel-default">
 
+  <div class="panel-heading">Subject: <b><%= @conversation.subject %></b></div>
  
   <div class="panel-body">
     <div class="messages">
@@ -11,13 +12,10 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <div class="panel-heading"><h1><%= @conversation.subject %></h1>From <%= message.sender.fname %></div>
+            <b><%= message.sender.fname %></b> says at <%= message.created_at.strftime("%B %-d %Y, %H:%M:%S") %>
           </div>
           <div class="media-body">
-            <h6 class="media-heading">
-              <%= message.sender.fname %>
-              says at
-              <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+            <h2 class="media-heading">
             <%= message.body %>
           </div>
         </div>

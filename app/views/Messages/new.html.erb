@@ -16,7 +16,7 @@
    
     <div class="form-group">
       <%= label_tag 'recipients', 'Choose recipients' %>
-      <%= select_tag 'recipients', options_for_select(User.all.collect{|x| [x.fname, x.id]}), multiple: true, class: 'form-control' %>
+      <%= select_tag 'recipients', options_for_select(User.order('fname').collect{|x| [x.fname, x.id]}), multiple: true, class: 'form-control' %>
     </div>
 
     <br>
