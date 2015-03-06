@@ -20,8 +20,8 @@
 	<%= f.text_area :bio, placeholder: "Bio"  %><br />
 	<%= f.password_field :password, placeholder: "Password"%><br />
     <%= f.file_field :avatar %> <br>
-    <%= f.submit :class => 'formbuttons'%> <br/>
-    <%= link_to 'Back', :back, remote: true, class: 'back-button'%>
+    <%= f.submit 'Create', class: 'buttonStyle'%>
+    <%= link_to 'Back', :back, remote: true, class: 'buttonStyle'%>
     <% end %>
 
 <br />

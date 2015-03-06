@@ -107,7 +107,10 @@ ul {
   display: inline-block;
   width: 25%;
   float: left;
-  background-color: rgba(99,99,99, 0.6);
+  border: 1px solid #636363;
+//  background-color: rgba(99,99,99, 0.6);
+  padding: 10px;
+  border-radius: 0px 10px 10px 0px;
 }
 #left_profile img {
   height: 200px;
@@ -115,12 +118,16 @@ ul {
 
 #right_profile {
   display: inline-block;
-  width: 72%;
+  border: 1px solid #636363;
+  width: 20%;
+  float: right;
+  margin-top: 10%;
 }
 
 #bottom_profile {
   padding-bottom: 75px;
   clear: both;
+  margin-top: 400px;
 }
 
 .user-show-image {
@@ -128,5 +135,8 @@ ul {
 }
 
 #bio_text {
-  text-align: left;
+  span{
+    text-align: justify;
+  }
+  text-align: center;
 }

@@ -1,12 +1,8 @@
-<% if current_user %>
-	<p>Hello <%= current_user.fname %> | 
-		<%= link_to 'sign out', logout_path %>
-			| 
-	</p>
-<% else %>
+
 
 	<%= form_tag(signin_path, method: :post, class:'login-box') do %>
         <h1>Log In</h1>
+        <%= flash[:alert] if flash[:alert]%><br/>
 		<%= label_tag %>
 		<%= email_field_tag :email, nil, placeholder: 'Email' %>
 		<br>
@@ -16,6 +12,4 @@
 		<%= link_to "Sign up", new_user_path, remote: true, class: 'buttonStyle', id: 'sign-up-link' %>
 		<%= submit_tag "Login", class: 'buttonStyle' %>
 
-		
-	<% end %>
 <% end %>

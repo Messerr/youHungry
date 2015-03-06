@@ -1,7 +1,7 @@
 $('.login-box').fadeOut(1000);
 $('.fadebox').hide().fadeIn(1000).html("<%= j render 'users/form' %> ").css('margin-top', '15%');
 
-$('.back-button').on('click', function(){
+$('.buttonStyle').on('click', function(){
     $('.fadebox').fadeOut(function(){
         $(this).hide().html("<%= j render 'shared/login' %> ").fadeIn(1000);
     })
