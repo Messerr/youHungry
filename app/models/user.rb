@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 
   	acts_as_messageable
 
-
   def mailboxer_email(current_user)
  	  :mailboxer_email
   end

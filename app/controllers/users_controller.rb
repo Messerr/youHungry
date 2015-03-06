@@ -11,13 +11,14 @@ class UsersController < ApplicationController
 	                  token: 'hX0xp3x780IvbSGaix4tzEUDtRwha10T',
 	                  token_secret: 'oWsYW3C4U2EEjLkb4-sjsax9d_Y'
              	   })
-
+  @messages_count = current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)
   end
 
   def show
     #current_user
     @candidates = current_user.dating_pool.sample(15)
-
+    current_user
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
   end
 
   def edit

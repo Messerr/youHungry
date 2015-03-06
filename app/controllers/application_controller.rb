@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
   	session[:user_id] ? User.find(session[:user_id]) :nil
   end
 
+  def show
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
+  end
+
   require 'yelp'
 
   #Should hide api key

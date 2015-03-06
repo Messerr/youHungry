@@ -14,11 +14,7 @@
 
     <nav class="nav-bar">
       <div class="WelcomeMessage">
-        <% if current_user != nil %>
-            <h3>Welcome <%=current_user.fname%>! </h3>
-        <%else%>
             <h1><%= "YouHungry?" %></h1>
-        <%end%>
       </div>
 
 
@@ -31,8 +27,9 @@
         <% else %>
             <li><%= link_to 'Home', users_path %></li>|
             <li> <%= link_to 'Profile', current_user %></li> |
-            <li><%= link_to 'Inbox', conversations_path %></li> 
+            <li><%= link_to 'Inbox' + ' ' + @messages_count.to_s, conversations_path %></li> 
           | <li>  <%= link_to 'Sign Out', logout_path %> </li>
+           
         <% end %>
       </ul>
 
@@ -49,10 +46,10 @@
           <p>©2015 YouHungry Inc.</p>
           <ul>
             <li>
-              <i class="fa fa-facebook-square fa-2x"></i>
+            <a href = 'https://www.facebook.com/pages/You-Hungry/894591143895533'>  <i class="fa fa-facebook-square fa-2x"></i></a>
             </li>
             <li>
-              <i class="fa fa-twitter-square fa-2x"></i>
+             <a href = 'https://twitter.com/you_hungry_bro'> <i class="fa fa-twitter-square fa-2x"></i> </a>
             </li>
           </ul>
         </div>

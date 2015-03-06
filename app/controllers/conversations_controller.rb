@@ -4,9 +4,12 @@ class ConversationsController < ApplicationController
 
 	def index
     @conversations = @mailbox.inbox
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
   end
  
   def show
+    @conversation.mark_as_read(current_user)
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
   end
 
   def reply
