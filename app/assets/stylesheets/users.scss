@@ -78,6 +78,39 @@
   width: auto;
 }
 
-ol {
+ul {
   padding-bottom: 25px;
+  list-style-type: none;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+#left_profile {
+  display: inline-block;
+  width: 25%;
+}
+#left_profile img {
+  height: 200px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#right_profile {
+  display: inline-block;
+  width: 72%;
+}
+
+#bottom_profile {
+  padding-bottom: 75px;
+}
+
+.user-show-image {
+  text-align: center;
+}
+
+#bio_text {
+  text-align: left;
 }
