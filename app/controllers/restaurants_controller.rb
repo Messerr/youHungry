@@ -7,10 +7,11 @@ class RestaurantsController < ApplicationController
      if @restaurant.save
         @user.follow(@restaurant)
      else
-       flash[:notice] = @restaurant.errors.full_messages
+       flash[:notice] = "Already Liked Restaurant!"
      end
     redirect_to users_path
   end
+
 
   private
   def restaurant_params

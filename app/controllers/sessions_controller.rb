@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         @user.update(address: remote_ip)
 				flash[:notice] = "Successfully signed in!"
 				session[:user_id] = @user.id
-        redirect_to @user
+        redirect_to users_path
 			elsif @user and @user.password == nil
 				flash[:alert] = "Email or Password cannot be blank!"
         redirect_to '/#thirdPage'
