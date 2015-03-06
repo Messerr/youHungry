@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    #current_user
+    @candidates = current_user.dating_pool.sample(15)
     current_user
     @messages_count = current_user.mailbox.inbox({:read => false}).count
   end
