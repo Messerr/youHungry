@@ -1,10 +1,11 @@
 <div class="home-user-image">
-  <h3>Welcome <%= @user.fname %>!</h3>
+  <h2>Welcome <%= @user.fname %>!</h2>
   <!--<%= image_tag @user.avatar.url(:thumb) %>-->
   <br/>
 
 
-  <%= flash[:notice] if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] if flash[:notice] %></p>
+  <p id="alert"><%= flash[:alert] if flash[:alert] %></p>
 </div>
 
 

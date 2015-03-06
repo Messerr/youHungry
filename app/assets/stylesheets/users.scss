@@ -1,6 +1,9 @@
 //SEARCH BAR STYLES//
 @import 'searchbarstyles';
 
+//INBOX STYLES//
+@import 'inbox';
+
 //HOME PAGE STYLES//
 
 .home-user-image {
@@ -13,6 +16,15 @@
   text-align: left;
   padding: 10px;
   width: 100%;
+
+  h2 {
+    background-color: rgba(99,99,99, 0.7);
+    width: 18%;
+    padding: 10px;
+    margin-left: -10px;
+    text-shadow: 1px 1px 1px #636363;
+    color: white;
+  }
 
 
 }
@@ -44,6 +56,7 @@
 
 .user-show-image {
   text-align: left;
+  float: left;
 }
 
 #scroll {
@@ -93,11 +106,11 @@ ul {
 #left_profile {
   display: inline-block;
   width: 25%;
+  float: left;
+  background-color: rgba(99,99,99, 0.6);
 }
 #left_profile img {
   height: 200px;
-  margin-right: 0;
-  margin-left: 0;
 }
 
 #right_profile {
@@ -107,6 +120,7 @@ ul {
 
 #bottom_profile {
   padding-bottom: 75px;
+  clear: both;
 }
 
 .user-show-image {

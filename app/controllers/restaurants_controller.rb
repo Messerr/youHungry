@@ -4,12 +4,13 @@ class RestaurantsController < ApplicationController
     @user = current_user
     @restaurant = Restaurant.new
     @restaurant.name = params[:name]
-     if @restaurant.save
-        @user.follow(@restaurant)
-        flash[:notice] = "Restaurant Liked!"
-     else
-       flash[:notice] = "Already Liked Restaurant!"
-     end
+       if @restaurant.save
+          @user.follow(@restaurant)
+          flash[:notice] = "Restaurant Liked!"
+       else
+         format.html{flash[:alert] = "Already Liked Restaurant!"}
+         format.js
+       end
     redirect_to users_path
   end
 
