@@ -9,8 +9,13 @@
 	  <h3>Gender: <%= @user.gender %></h3>
 	  <h3 id="bio_text">Bio: <%= @user.bio %></h3><br />
 	</div>
+
 	<% if @user.id == current_user.id %>
 		<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
+	<% end %>
+
+	<% if @user.id != current_user.id %>
+		<%= link_to 'Send Message', new_message_path %>
 	<% end %>
 </div>
 

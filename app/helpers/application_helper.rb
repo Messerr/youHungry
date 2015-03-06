@@ -10,9 +10,7 @@ module ApplicationHelper
                           token_secret: 'oWsYW3C4U2EEjLkb4-sjsax9d_Y'
                         })
 
-  def show 
-    @messages_count = current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)
-  end
+  
 
 
   def set_user
