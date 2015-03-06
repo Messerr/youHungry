@@ -44,9 +44,8 @@
 					<p><b><%= x.name %></b></p>
 					<p><img src="<%= x.rating_img_url %>"> <%= x.review_count.to_s %></p>
 					<a href="<%= x.url %>">View Restaurant</a> <br>
-
                     <%= link_to 'Like', restaurants_path(name: x.id), method: :post, remote: true%>
-                  <br/>
+                	 <br/>
                     <%= link_to 'Unlike', unlike_path(name: x.id), method: :post, remote: true%>
 				</div>
 				<div class="col-md-2">

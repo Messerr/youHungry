@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	                  token: 'hX0xp3x780IvbSGaix4tzEUDtRwha10T',
 	                  token_secret: 'oWsYW3C4U2EEjLkb4-sjsax9d_Y'
              	   })
-
+  @messages_count = current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)
   end
 
   def show
