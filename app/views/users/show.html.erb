@@ -13,6 +13,8 @@
 		<%= link_to 'Edit profile', edit_user_path(current_user.id) %> <br />
 	<% end %>
 </div>
+Unread messages:
+<%= @messages_count %>
 
 <div id="right_profile">
 	<h3>Users Liked Restaurants:</h3>

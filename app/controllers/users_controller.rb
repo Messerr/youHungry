@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     current_user
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
   end
 
   def edit
