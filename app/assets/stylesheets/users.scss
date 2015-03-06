@@ -6,11 +6,13 @@
 .home-user-image {
 //  border: 1px solid black;
   margin-top: -20px;
-  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
   position: fixed;
   background-color: white;
   text-align: left;
   padding: 10px;
+  width: 100%;
 
 
 }
@@ -23,11 +25,12 @@
 
 .container-fluid {
 
-  float: left;
+//  float: left;
 //  text-align: left;
+  width: 80%;
   border: 1px solid black;
   padding: 10px;
-  margin: 0;
+  margin: 0 auto;
   padding-bottom: 20px;
 }
 
@@ -40,6 +43,76 @@
 }
 
 .user-show-image {
+  text-align: left;
+}
+
+#scroll {
+    max-width:80%;
+    height:210px;
+    border: 2px solid #bed5cd;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: 0 0 10px #000;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#scroll ul {
   float: left;
+  margin-right: -999em;
+  white-space: nowrap;
+  list-style: none;
+  -webkit-padding-start: 0px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+
+#scroll li {
+
+  text-align: center;
+  float: left;
+  display: inline;
+}
+
+#scroll img {
+  height: 175px;
+  width: auto;
+}
+
+ul {
+  padding-bottom: 25px;
+  list-style-type: none;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+#left_profile {
+  display: inline-block;
+  width: 25%;
+}
+#left_profile img {
+  height: 200px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#right_profile {
+  display: inline-block;
+  width: 72%;
+}
+
+#bottom_profile {
+  padding-bottom: 75px;
+}
+
+.user-show-image {
+  text-align: center;
+}
+
+#bio_text {
   text-align: left;
 }

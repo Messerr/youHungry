@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update, :show, :destroy]
 
 
-
-
   def index
   	@user = current_user
   	@users = User.all 
@@ -34,6 +32,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        @user.update(address: remote_ip)
         session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.js
@@ -45,9 +44,6 @@ class UsersController < ApplicationController
 
   end
 
-  def like
-    
-  end
 
   def update
   		if @user.update(user_params)
@@ -73,5 +69,7 @@ class UsersController < ApplicationController
   def current_user
     session[:user_id] ? User.find(session[:user_id]) :nil
   end
+
+
 
 end
