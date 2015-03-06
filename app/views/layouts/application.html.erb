@@ -27,7 +27,7 @@
         <% else %>
             <li><%= link_to 'Home', users_path %></li>|
             <li> <%= link_to 'Profile', current_user %></li> |
-            <li><%= link_to 'Inbox' + ' ' + '(' + @messages_count.to_s + ')', conversations_path %></li> 
+            <li><%= link_to 'Inbox' + ' ' + @messages_count.to_s, conversations_path %></li> 
           | <li>  <%= link_to 'Sign Out', logout_path %> </li>
            
         <% end %>
