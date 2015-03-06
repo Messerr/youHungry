@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
 
   resources :conversations, only: [:index, :show, :destroy] do
-  member do
-    post :reply
+    member do
+      post :reply
+    end
   end
-end
   resources :messages, only: [:new, :create]
   
   

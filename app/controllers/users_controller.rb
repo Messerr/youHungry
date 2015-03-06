@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
+    #current_user
+    @candidates = current_user.dating_pool.sample(15)
+
   end
 
   def edit
