@@ -52,7 +52,7 @@
 					<p><%= x.location.display_address.to_s.gsub('"', '').gsub('[', '').gsub(']', '') %></p>
 				</div>
 				<div class="col-md-2">
-					<p><% x.display_phone.to_s.gsub('+', '') %></p>
+					<p><%= x.display_phone.to_s.gsub('+', '') %></p>
 				</div>
 				<div class="col-md-2" id ="yelp_picture">
 					<img src="<%= x.image_url %>">
